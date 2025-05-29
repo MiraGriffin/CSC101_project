@@ -39,6 +39,8 @@ class Classes:
                  self.quarter_taken == other.quarter_taken)
 gurhfouhsepif
 hello
+hyyyy
+
 
 
 
