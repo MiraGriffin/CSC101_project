@@ -38,6 +38,9 @@ class Classes:
                  self.grade == other.grade and
                  self.quarter_taken == other.quarter_taken)
 gurhfouhsepif
+hello
+hyyyy
+
 
 
 
