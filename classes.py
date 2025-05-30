@@ -37,11 +37,19 @@ class Classes:
                  self.name == other.name and
                  self.grade == other.grade and
                  self.quarter_taken == other.quarter_taken)
-gurhfouhsepif
-hello
-hyyyy
 
-
+class TestGrade:
+    def __innit__(self, name:str, grade:int):
+        self.name = name
+        self.grade = grade
+    def __repr__(self):
+        return "Test: {}, Grade: {}", format(self.name, self.grade)
+    def __str__(self):
+        return "Test: {}, Grade: {}", format(self.name, self.grade)
+    def __eq__(self, other):
+        return  (self is other or type(other)==Classes and
+                 self.name == other.name and
+                 self.grade == other.grade)
 
 
 
