@@ -1,11 +1,11 @@
 class Student:
     def __init__(self, name:str, id:int, assignments:dict,
-                 overall:float, quarter:dict, gpa:float):
+                 overall:float, quarter_grades:dict, gpa:float):
         self.name = name
         self.id = id
         self.assignments = assignments
         self.overall = overall
-        self.quarter = quarter
+        self.quarter_grades = quarter_grades
         self.gpa = gpa
     def __repr__(self):
         return ("Name: {}, Student ID: {}, Grades by Assignment: {}, Overall Grade: {}, Grades by Quarter: {}, GPA: {}"
@@ -23,7 +23,7 @@ class Student:
                 self.quarter == other.quarter and
                 self.gpa == other.gpa)
 
-class Classes:
+class Class:
     def __init__(self, name:str, grade:int, quarter_taken:str):
         self.name = name
         self.grade = grade
