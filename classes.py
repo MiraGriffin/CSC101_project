@@ -38,6 +38,7 @@ class Class:
                  self.grade == other.grade and
                  self.quarter_taken == other.quarter_taken)
 
+
 class TestGrade:
     def __innit__(self, name:str, grade:int):
         self.name = name
