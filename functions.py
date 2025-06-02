@@ -1,5 +1,5 @@
 from classes import Student, Class
-
+#List of all the students. The "assignment" characteristic is a dictionary.
 students = [Student('Sally', 101,
                     {'quiz 1':87, 'test 1':90, 'quiz 2': 83},
                     86.67,
@@ -69,7 +69,12 @@ students = [Student('Sally', 101,
                                                 Class('Calc 3', 89, ''),
                                                 Class('Coms 101', 88, '')]}, 3.0)
             ]
-
+#This function prompts the user to enter a name.
+# The function will then find the students name in the list,
+# if the students name is not in the list then it will tell the user.
+#The input is a list of students.
+#The return type is none. This is not super useful on its own but we will use this function
+#later when it is apart of a larger function.
 def find_student(students: list[Student]) -> None:
     student = input("Student Name: ")
     student_names = []
@@ -78,6 +83,10 @@ def find_student(students: list[Student]) -> None:
     if student not in student_names:
         print('Student not found, please try another name')
 
+#This function is still in progress. We have not finsihed it.
+#This function will grade a students test by opening the txt file and reading it.
+#The function then will compare the answers to the key and grade the test.
+#The function takes no arguments (we will use input and find student) and returns a list of students.
 def grade_test() -> list[str]:
     answers = []
     try:
@@ -91,7 +100,9 @@ def grade_test() -> list[str]:
         print(e)
     return answers
 
-
+#This function calculates the overall GPA of a student that is given by the user once prompted.
+#The function takes the 0-100 grade and turns it into a 4.0 grading scale
+#the input is a list of students and the output is None.
 def overall_gpa_calc(students: list[Student]) -> None:
     name = input("Enter student name: ")
     for student in students:
@@ -126,6 +137,10 @@ def overall_gpa_calc(students: list[Student]) -> None:
 
     print("Student not found.")
 
+#This function is similar to the one above, however it calculate the GPA by quarter.
+#The user will be prompted to input a students name and a quarter
+#The function will then find the student and their grades for the specified quarter and calculate the GPA
+#The input is a list of students and the output is None.
 def quarter_gpa_calc(students: list[Student]) -> None:
     name = input("Enter student name: ")
     quarter = input("Enter quarter (Example:Fall 2024): ")
