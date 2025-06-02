@@ -100,6 +100,37 @@ def grade_test() -> list[str]:
         print(e)
     return answers
 
+def grade_test_2():
+    name = input("Enter student name:")
+    student_file = f"{name}_test.txt"
+    key = "test_key.txt"
+    try:
+        with open(key,'r') as x:
+            key_lines = x.readlines()
+        key_answers = []
+        for line in key_lines:
+            if "Question" in line and "Answer:" in line:
+                parts = line.strip().split("Answer:")
+                if len(parts)==2:
+                    key_answers.append(parts[1].strip())
+        with open(student_file, 'r') as x:
+            student_lines = x.readlines()
+        student_answers = []
+        for line in student_lines:
+            if "Question" in line and "Answer:" in line:
+                parts = line.strip().split("Answer:")
+                if len(parts) == 2:
+                    student_answers.append(parts[1].strip())
+        correct_count = 0
+        total_questions = len(key_answers)
+        for x in range(min(len(key_answers),len(student_answers))):
+            if student_answers[x].upper() == key_answers[x].upper():
+                correct_count +=1
+        score = (correct_count/total_questions)*100
+        print("{}'s score:{}%".format(name,round(score,2)))
+    except FileNotFoundError as e:
+        print(e)
+grade_test_2()
 #This function calculates the overall GPA of a student that is given by the user once prompted.
 #The function takes the 0-100 grade and turns it into a 4.0 grading scale
 #the input is a list of students and the output is None.
@@ -174,7 +205,6 @@ def quarter_gpa_calc(students: list[Student]) -> None:
             return
     print("Student not found.")
 
-print(quarter_gpa_calc(students))
 
 
 
